@@ -26,3 +26,6 @@ Route::get('/footer', function() {
 Route::get('/content', function() {
     return view('layouts.content');
 });
+Route::get('/absent', function() {
+    return view('layouts.absent');
+});
