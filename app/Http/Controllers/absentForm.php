@@ -13,15 +13,10 @@ class absentForm extends Controller
      */
     public function index()
     {
-        //
+        // return view('admin.absents.create', compact('absents'));
     }
 
-    public function getForm(){
-        return view('test');
-    }
-    public function handleRequest(Request $request){
-        return $request->all();
-    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -30,7 +25,7 @@ class absentForm extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**

@@ -31,7 +31,7 @@
                 <h4 class="text-center title-section mb-4"><span class="font-weight-bold">Vui lòng nhập thông tin đơn phép </span></h4>
             </div>
 
-            <form action="{{ route('admin.absentForm.store') }}" method="post" enctype='multipart/form-data'>
+            <form action="" method="post" enctype='multipart/form-data'>
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
             <div class="form-group">
