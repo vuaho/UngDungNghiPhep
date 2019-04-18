@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGroupactionsTable extends Migration
+class CreateDeparmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateGroupactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('groupactions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('group_id')->unsigned();
-            $table->integer('action_id')->unsigned();
+        Schema::create('deparments', function (Blueprint $table) {
+            $table->Increments('id');
+            $table->string('name');
+            $table->integer('parent_id');
+            $table->integer('empquantity');
+            $table->tinyInteger('is_delete')->default(1);
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateGroupactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groupactions');
+        Schema::dropIfExists('deparments');
     }
 }
