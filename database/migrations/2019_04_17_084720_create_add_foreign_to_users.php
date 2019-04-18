@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyToGroupactionsTable extends Migration
+class CreateAddForeignToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddForeignKeyToGroupactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('groupactions', function (Blueprint $table) {
-            $table->foreign('action_id')->references('id')->on('actions');
-            $table->foreign('group_id')->references('id')->on('groups');
+        Schema::create('users', function (Blueprint $table) {
+            $table->foreign('deparment_id')->references('id')->on('deparments');
+         
         });
     }
 
@@ -26,6 +26,6 @@ class AddForeignKeyToGroupactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groupactions');
+        Schema::dropIfExists('users');
     }
 }

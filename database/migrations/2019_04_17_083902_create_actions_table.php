@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormsTable extends Migration
+class CreateActionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateFormsTable extends Migration
      */
     public function up()
     {
-        Schema::create('forms', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('reason');
-            $table->string('content');
-            $table->dateTime('date off');
-            $table->integer('user_id')->unsigned();
+        Schema::create('actions', function (Blueprint $table) {
+            $table->Increments('id');
+            $table->string('name');
+            $table->string('description');
             $table->tinyInteger('is_delete')->default(1);
             $table->timestamps();
         });
@@ -31,6 +29,6 @@ class CreateFormsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('forms');
+        Schema::dropIfExists('actions');
     }
 }
