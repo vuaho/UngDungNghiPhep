@@ -17,6 +17,7 @@
     <link href="css/simple-line-icons.css" rel="stylesheet">
     <!-- Main styles for this application-->
     <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-form.css" rel="stylesheet">
     <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>

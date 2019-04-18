@@ -115,7 +115,7 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="/admin/products"><i class="fa fa-dashboard fa-fw"></i>Ứng Dụng Nghỉ Phép </a>
+                        <a href="{{url ('admin/user')}}"><i class="fa fa-dashboard fa-fw"></i>Ứng Dụng Nghỉ Phép </a>
                     </li>
 
                     

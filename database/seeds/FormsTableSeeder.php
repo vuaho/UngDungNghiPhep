@@ -11,6 +11,12 @@ class FormsTableSeeder extends Seeder
      */
     public function run()
     {
+
+        DB::table('forms')->truncate();
+        App\Form::create([
+        	'fullname' => 'Badman',
+        	'email' =>'badman@gmail.com',
+        ]);
         DB::table('forms')->insert(
             [
                 [
@@ -39,5 +45,6 @@ class FormsTableSeeder extends Seeder
                
             ]
         );
+
     }
 }
