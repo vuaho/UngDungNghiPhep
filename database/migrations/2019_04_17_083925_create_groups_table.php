@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyToUsergroupsTable extends Migration
+class CreateGroupsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class AddForeignKeyToUsergroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('usergroups', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('group_id')->references('id')->on('groups');
+        Schema::create('groups', function (Blueprint $table) {
+            $table->Increments('id');
+            $table->string('name');
+            $table->tinyInteger('is_delete')->default(1);
+            $table->timestamps();
         });
     }
 
@@ -26,6 +28,6 @@ class AddForeignKeyToUsergroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usergroups');
+        Schema::dropIfExists('groups');
     }
 }

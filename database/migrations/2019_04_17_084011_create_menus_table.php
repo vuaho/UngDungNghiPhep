@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyToUseractionsTable extends Migration
+class CreateMenusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class AddForeignKeyToUseractionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('useractions', function (Blueprint $table) {
-            $table->foreign('action_id')->references('id')->on('actions');
-            $table->foreign('user_id')->references('id')->on('users');
-
+        Schema::create('menus', function (Blueprint $table) {
+            $table->Increments('id');
+            $table->string('name');
+            $table->string('description');
+            $table->tinyInteger('is_delete')->default(1);
+            $table->timestamps();
         });
     }
 
@@ -27,6 +29,6 @@ class AddForeignKeyToUseractionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('useractions');
+        Schema::dropIfExists('menus');
     }
 }
