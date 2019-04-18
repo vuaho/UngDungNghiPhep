@@ -27,6 +27,14 @@ Route::get('/footer', function () {
 Route::get('/content', function () {
     return view('layouts.content');
 });
-Route::get('/sinh', function () {
+Route::get('/form', function () {
     return view('layouts.absent.create');
 });
+Route::get('/admin', function() {
+    return view('layouts.admin');
+});
+Route::get('/users', function() {
+    return view('admin.user');
+});
+Route::resource('admin/user', 'UserController');
+
